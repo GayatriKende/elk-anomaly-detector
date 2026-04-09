@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_DIR = '${WORKSPACE}'
+        DEPLOY_DIR = "${WORKSPACE}"
         SERVER_IP  = 'localhost'
     }
 
@@ -118,7 +118,7 @@ pipeline {
         }
         failure {
             echo 'Pipeline FAILED. Check logs above for errors.'
-            sh 'docker-compose -f /home/ubuntu/elk-anomaly-detector/docker-compose.yml logs --tail=20 || true'
+            sh 'docker-compose -f ${WORKSPACE}/docker-compose.yml logs --tail=20 || true'
         }
     }
 }
