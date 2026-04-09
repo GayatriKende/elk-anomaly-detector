@@ -3,8 +3,3 @@ terraform/.terraform/
 terraform/terraform.tfstate*
 __pycache__/
 logs/*.log
-*.pem
-terraform/.terraform/
-terraform/terraform.tfstate*
-__pycache__/
-logs/*.log
