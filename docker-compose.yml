@@ -17,7 +17,7 @@ services:
       - "9300:9300"
     volumes:
       - es_data:/usr/share/elasticsearch/data
-    mem_limit: 600m
+    mem_limit: 1g
     ulimits:
       memlock:
         soft: -1
@@ -36,11 +36,11 @@ services:
       - "5601:5601"
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-      - NODE_OPTIONS=--max-old-space-size=256
+      - NODE_OPTIONS=--max-old-space-size=512
     depends_on:
       elasticsearch:
         condition: service_healthy
-    mem_limit: 350m
+    mem_limit: 600m
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5601/api/status"]
       interval: 30s
