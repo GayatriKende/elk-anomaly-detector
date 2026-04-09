@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_DIR = '/home/ubuntu/elk-anomaly-detector'
+        DEPLOY_DIR = '${WORKSPACE}'
         SERVER_IP  = 'localhost'
     }
 
